@@ -14,15 +14,6 @@
 # limitations under the License.
 #
 
-# This file includes all definitions that apply to ALL wingray devices, and
-# are also specific to wingray devices
-#
-# Everything in this directory will become public
-
-# This device is xhdpi.  However the platform doesn't
-# currently contain all of the bitmaps at xhdpi density so
-# we do this little trick to fall back to the hdpi version
-# if the xhdpi doesn't exist.
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
@@ -33,13 +24,8 @@ PRODUCT_PACKAGES += \
     sensors.stingray
 
 
-# LOCAL_KERNEL := device/moto/stingray-kernel/kernel
-
-# PRODUCT_COPY_FILES := \
-# 	$(LOCAL_KERNEL):kernel
-
 PRODUCT_COPY_FILES := \
-        device/moto/wingray/libaudio/audio_policy.conf:system/etc/audio_policy.conf
+        device/motorola/wingray/libaudio/audio_policy.conf:system/etc/audio_policy.conf
 
 PRODUCT_COPY_FILES += \
     device/moto/wingray/init.stingray.rc:root/init.stingray.rc \
@@ -58,18 +44,18 @@ PRODUCT_COPY_FILES += \
 # endif
 
 PRODUCT_COPY_FILES += \
-    device/moto/wingray/mXT1386_08_AA.bin:system/etc/firmware/mXT1386_08_AA.bin \
-    device/moto/wingray/mXT1386_08_E1.bin:system/etc/firmware/mXT1386_08_E1.bin \
-    device/moto/wingray/mXT1386_09_AA.bin:system/etc/firmware/mXT1386_09_AA.bin \
-    device/moto/wingray/mXT1386_10_AA.bin:system/etc/firmware/mXT1386_10_AA.bin \
-    device/moto/wingray/mXT1386_10_FF.bin:system/etc/firmware/mXT1386_10_FF.bin
+    device/motorola/wingray/mXT1386_08_AA.bin:system/etc/firmware/mXT1386_08_AA.bin \
+    device/motorola/wingray/mXT1386_08_E1.bin:system/etc/firmware/mXT1386_08_E1.bin \
+    device/motorola/wingray/mXT1386_09_AA.bin:system/etc/firmware/mXT1386_09_AA.bin \
+    device/motorola/wingray/mXT1386_10_AA.bin:system/etc/firmware/mXT1386_10_AA.bin \
+    device/motorola/wingray/mXT1386_10_FF.bin:system/etc/firmware/mXT1386_10_FF.bin
 
 PRODUCT_COPY_FILES += \
-        device/moto/wingray/qtouch-touchscreen.idc:system/usr/idc/qtouch-touchscreen.idc \
-        device/moto/wingray/cpcap-key.kl:system/usr/keylayout/cpcap-key.kl \
-        device/moto/wingray/cpcap-key.kcm:system/usr/keychars/cpcap-key.kcm \
-        device/moto/wingray/stingray-keypad.kl:system/usr/keylayout/stingray-keypad.kl \
-        device/moto/wingray/stingray-keypad.kcm:system/usr/keychars/stingray-keypad.kcm
+        device/motorola/wingray/qtouch-touchscreen.idc:system/usr/idc/qtouch-touchscreen.idc \
+        device/motorola/wingray/cpcap-key.kl:system/usr/keylayout/cpcap-key.kl \
+        device/motorola/wingray/cpcap-key.kcm:system/usr/keychars/cpcap-key.kcm \
+        device/motorola/wingray/stingray-keypad.kl:system/usr/keylayout/stingray-keypad.kl \
+        device/motorola/wingray/stingray-keypad.kcm:system/usr/keychars/stingray-keypad.kcm
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \

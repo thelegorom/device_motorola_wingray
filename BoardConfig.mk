@@ -41,7 +41,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_CMDLINE := androidboot.carrier=wifi-only product_type=w
 KERNEL_MODULES_DIR := /system/lib/modules
-TARGET_KERNEL_SOURCE := device/moto/stingray-kernel
+TARGET_KERNEL_SOURCE := kernel/motorola/stingray
 TARGET_KERNEL_CONFIG := elementalxvanilla_defconfig
 # TARGET_KERNEL_CONFIG := stingray_defconfig
 # TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
@@ -54,12 +54,10 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
 
-
 TARGET_NO_KERNEL := false
 TARGET_NO_RECOVERY := false
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
-
 
 # Audio
 BOARD_USES_GENERIC_AUDIO := false
@@ -84,12 +82,9 @@ ENABLE_WEBGL := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 # BOARD_BLUEDROID_VENDOR_CONF :=
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/moto/wingray/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/motorola/wingray/bluetooth
 
-
-
-TARGET_BOARD_INFO_FILE := device/moto/wingray/board-info.txt
-
+TARGET_BOARD_INFO_FILE := device/motorola/wingray/board-info.txt
 
 # Wifi-related defines
 WPA_BUILD_SUPPLICANT        	:= true
@@ -130,7 +125,7 @@ NEED_WORKAROUND_CORTEX_A9_745320 := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 TARGET_RECOVERY_UI_LIB := librecovery_ui_stingray
 
-TARGET_RECOVERY_FSTAB = device/moto/wingray/fstab.stingray
+TARGET_RECOVERY_FSTAB = device/motorola/wingray/fstab.stingray
 
 # BOARD_USES_SECURE_SERVICES := false
 
@@ -140,9 +135,7 @@ TARGET_RECOVERY_FSTAB = device/moto/wingray/fstab.stingray
 SENSORS_NEED_SETRATE_ON_ENABLE := true
 
 # BOARD_LIB_DUMPSTATE := libdumpstate.wingray
-TARGET_RELEASETOOLS_EXTENSIONS := device/moto/wingray
-
--include vendor/moto/stingray/BoardConfigVendor.mk
+TARGET_RELEASETOOLS_EXTENSIONS := device/motorola/wingray
 
 TARGET_OTA_ASSERT_DEVICE := wingray,stingray,everest
 
@@ -152,3 +145,20 @@ TARGET_SCREEN_WIDTH := 1280
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 TARGET_BOOTANIMATION_USE_RGB565 := true
+-include vendor/motorola/stingray/BoardConfigVendor.mk
+
+#TWRP config
+DEVICE_RESOLUTION := 720x1280
+RECOVERY_SDCARD_ON_DATA := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+#TARGET_RECOVERY_INITRC := device/motorola/wingray/init.recovery.rc
+#TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_JB_CRYPTO := true
+TW_FLASH_FROM_STORAGE := true
+TW_NO_USB_STORAGE := true
+
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/usb-otg"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "usb-otg"
