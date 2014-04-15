@@ -28,15 +28,15 @@ PRODUCT_COPY_FILES := \
         device/motorola/wingray/libaudio/audio_policy.conf:system/etc/audio_policy.conf
 
 PRODUCT_COPY_FILES += \
-    device/moto/wingray/init.stingray.rc:root/init.stingray.rc \
-    device/moto/wingray/init.stingray.usb.rc:root/init.stingray.usb.rc \
-    device/moto/wingray/fstab.stingray:root/fstab.stingray \
-    device/moto/wingray/ueventd.stingray.rc:root/ueventd.stingray.rc \
-    device/moto/wingray/media_profiles.xml:system/etc/media_profiles.xml \
-    device/moto/wingray/media_codecs.xml:system/etc/media_codecs.xml
+    device/motorola/wingray/init.stingray.rc:root/init.stingray.rc \
+    device/motorola/wingray/init.stingray.usb.rc:root/init.stingray.usb.rc \
+    device/motorola/wingray/fstab.stingray:root/fstab.stingray \
+    device/motorola/wingray/ueventd.stingray.rc:root/ueventd.stingray.rc \
+    device/motorola/wingray/media_profiles.xml:system/etc/media_profiles.xml \
+    device/motorola/wingray/media_codecs.xml:system/etc/media_codecs.xml
 
 PRODUCT_COPY_FILES += \
-    device/moto/wingray/twrp.fstab:recovery/root/etc/twrp.fstab
+    device/motorola/wingray/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # ifneq ($(TARGET_PREBUILT_WIFI_MODULE),)
 # PRODUCT_COPY_FILES += \
