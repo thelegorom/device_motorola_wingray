@@ -18,7 +18,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/lego/config/common_full_phone.mk)
+$(call inherit-product, vendor/lego/config/common_full_tablet_wifionly.mk)
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/motorola/wingray/device.mk)
